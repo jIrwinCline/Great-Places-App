@@ -57,7 +57,7 @@ const LocationPicker = (props) => {
 
   return (
     <View style={styles.locationPicker}>
-      <MapPreview style={styles.mapPreview}>
+      <MapPreview style={styles.mapPreview} location={pickedLocation}>
         {isFetching ? (
           <ActivityIndicator size="large" color={Colors.primary} />
         ) : (
