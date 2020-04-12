@@ -14,6 +14,7 @@ const PlaceDetailScreen = () => {
 
   const showMapHandler = () => {
     props.navigation.navigate("Map", {
+      //passing params here
       readonly: true,
       initialLocation: { selectedLocation },
     });
