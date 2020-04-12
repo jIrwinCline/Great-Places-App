@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import { useSelector } from "react-redux";
 import MapPreview from "../components/MapPreview";
+import Colors from "../constants/Colors";
 
 const PlaceDetailScreen = () => {
   const placeId = props.navigation.getParam("placeId");
@@ -9,7 +10,7 @@ const PlaceDetailScreen = () => {
     state.places.plaves.find((place) => place.id === placeId)
   );
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ alignItems: "center" }}>
       <Image source={{ uri: selectedPlace.imageUri }} style={styles.image} />
       <View style={styles.locationContainer}>
         <View style={styles.addressContainer}>
