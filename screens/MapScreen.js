@@ -23,6 +23,9 @@ const MapScreen = (props) => {
   };
 
   const selectLocationHandler = (event) => {
+    if (readonly) {
+      return;
+    }
     setSelectedLocation({
       lat: event.nativeEvent.coordinate.latitude,
       lng: event.nativeEvent.coordinate.longitude,
