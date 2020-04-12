@@ -5,8 +5,12 @@ export const ADD_PLACE = "ADD_PLACE";
 
 export const SET_PLACES = "SET_PLACES";
 
-export const addPlace = (title, image) => {
+export const addPlace = (title, image, location) => {
   return async (dispatch) => {
+    const response = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.lat},${location.lng}&key=${ENV.googleApiKey}`
+    );
+
     const fileName = image.split("/").pop();
     const newPath = FileSystem.documentDirectory + fileName;
 
