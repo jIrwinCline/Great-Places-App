@@ -15,7 +15,11 @@ export const addPlace = (title, image, location) => {
     }
 
     const resData = await response.json();
-    console.log(resData);
+    if (!resData.results) {
+      throw new Error("Something went wrong!");
+    }
+
+    const address = resData.results[0].formatted_address;
 
     const fileName = image.split("/").pop();
     const newPath = FileSystem.documentDirectory + fileName;
@@ -28,9 +32,9 @@ export const addPlace = (title, image, location) => {
       const dbResult = await insertPlace(
         title,
         newPath,
-        "Dummy address",
-        15.6,
-        12.3
+        address,
+        location.lat,
+        location.lng
       );
       // console.log(dbResult);
       dispatch({
