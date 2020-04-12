@@ -28,6 +28,10 @@ const MapScreen = (props) => {
   };
 
   const savePickedLocationHandler = useCallback(() => {
+    if (!selectedLocation) {
+      //could show alert
+      return;
+    }
     props.navigation.navigate("NewPlace", { pickedLocation: selectedLocation });
   }, [selectedLocation]);
 
