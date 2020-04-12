@@ -28,8 +28,8 @@ const MapScreen = (props) => {
   };
 
   const savePickedLocationHandler = useCallback(() => {
-    props.navigation.goBack();
-  }, []);
+    props.navigation.navigate("NewPlace", { pickedLocation: selectedLocation });
+  }, [selectedLocation]);
 
   useEffect(() => {
     props.navigation.setParams({ saveLocation: savePickedLocationHandler });
