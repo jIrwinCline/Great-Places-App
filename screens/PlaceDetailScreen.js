@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import MapPreview from "../components/MapPreview";
 import Colors from "../constants/Colors";
 
-const PlaceDetailScreen = () => {
+const PlaceDetailScreen = (props) => {
   const placeId = props.navigation.getParam("placeId");
   const selectedPlace = useSelector((state) =>
     state.places.plaves.find((place) => place.id === placeId)
