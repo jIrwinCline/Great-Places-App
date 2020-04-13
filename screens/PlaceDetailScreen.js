@@ -16,7 +16,7 @@ const PlaceDetailScreen = (props) => {
     props.navigation.navigate("Map", {
       //passing params here
       readonly: true,
-      initialLocation: { selectedLocation },
+      initialLocation: selectedLocation,
     });
   };
   return (
