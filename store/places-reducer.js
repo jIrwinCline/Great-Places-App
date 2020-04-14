@@ -33,10 +33,11 @@ export default (state = initialState, action) => {
         places: state.places.concat(newPlace),
       };
     case REMOVE_PLACE:
+      const newPlaces = state.places.filter((place) => {
+        return place != action.payload.id;
+      });
       return {
-        places: state.places.filter((place) => {
-          return place != action.payload.id;
-        }),
+        places: newPlaces,
       };
     default:
       return state;

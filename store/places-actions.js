@@ -11,7 +11,9 @@ export const deletePlace = (id) => {
       const response = await removePlace(id);
       dispatch({
         type: REMOVE_PLACE,
-        payload: id,
+        payload: {
+          id: id,
+        },
       });
     } catch {
       throw new Error("Something went wrong!");
