@@ -5,12 +5,18 @@ export const ADD_PLACE = "ADD_PLACE";
 export const REMOVE_PLACE = "REMOVE_PLACE";
 export const SET_PLACES = "SET_PLACES";
 
-export const deletePlace = async (id) => {
-  try {
-    const response = await removePlace(id);
-  } catch {
-    throw new Error("Something went wrong!");
-  }
+export const deletePlace = (id) => {
+  return async (dispatch) => {
+    try {
+      const response = await removePlace(id);
+      dispatch({
+        type: REMOVE_PLACE,
+        payload: id,
+      });
+    } catch {
+      throw new Error("Something went wrong!");
+    }
+  };
 };
 
 export const addPlace = (title, image, location) => {
