@@ -38,7 +38,7 @@ export const insertPlace = (title, imageUri, address, lat, lng) => {
   return promise;
 };
 
-export const deletePlace = (id) => {};
+export const removePlace = (id) => {};
 
 export const fetchPlaces = () => {
   const promise = new Promise((resolve, reject) => {
