@@ -12,8 +12,8 @@ import Colors from "../constants/Colors";
 const PlaceItem = (props) => {
   const deleteAlertHandler = () => {
     Alert.alert("Delete?", "It will be lost permanently", [
-      { text: "Delete", onPress: () => console.log("delete press") },
-      { text: "Cancel", onPress: () => console.log("cancel press") },
+      { text: "Delete", onPress: () => props.deletePlace },
+      { text: "Cancel", onPress: () => null },
     ]);
   };
   return (

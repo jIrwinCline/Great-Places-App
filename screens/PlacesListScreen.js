@@ -24,7 +24,8 @@ const PlacesListScreen = (props) => {
   }, [dispatch]);
 
   const deletePlaceHandler = (idToDelete) => {
-    dispatch(placesActions.deletePlace(idToDelete));
+    // dispatch(placesActions.deletePlace(idToDelete));
+    console.log("delete");
   };
 
   return (
