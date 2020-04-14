@@ -23,8 +23,14 @@ const PlacesListScreen = (props) => {
     dispatch(placesActions.loadPlaces());
   }, [dispatch]);
 
-  const deletePlaceHandler = () => {
-    dispatch(placesActions.deletePlace());
+  const deletePlaceHandler = (idToDelete) => {
+    dispatch(placesActions.deletePlace(idToDelete));
+  };
+  const deleteAlertHandler = () => {
+    Alert.alert("Delete?", "It will be lost permanently", [
+      { text: "Delete", onPress: () => console.log("delete press") },
+      { text: "Cancel", onPress: () => console.log("cancel press") },
+    ]);
   };
 
   return (
