@@ -26,12 +26,6 @@ const PlacesListScreen = (props) => {
   const deletePlaceHandler = (idToDelete) => {
     dispatch(placesActions.deletePlace(idToDelete));
   };
-  const deleteAlertHandler = () => {
-    Alert.alert("Delete?", "It will be lost permanently", [
-      { text: "Delete", onPress: () => console.log("delete press") },
-      { text: "Cancel", onPress: () => console.log("cancel press") },
-    ]);
-  };
 
   return (
     <View>

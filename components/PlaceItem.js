@@ -1,10 +1,27 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 import Colors from "../constants/Colors";
 
 const PlaceItem = (props) => {
+  const deleteAlertHandler = () => {
+    Alert.alert("Delete?", "It will be lost permanently", [
+      { text: "Delete", onPress: () => console.log("delete press") },
+      { text: "Cancel", onPress: () => console.log("cancel press") },
+    ]);
+  };
   return (
-    <TouchableOpacity onPress={props.onSelect} style={styles.placeItem}>
+    <TouchableOpacity
+      onPress={props.onSelect}
+      onLongPress={deleteAlertHandler}
+      style={styles.placeItem}
+    >
       <Image style={styles.image} source={{ uri: props.image }} />
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{props.title}</Text>
