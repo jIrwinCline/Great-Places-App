@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Platform,
+  FlatList,
+  Alert,
+} from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { useSelector } from "react-redux";
 import HeaderButton from "../components/HeaderButton";
@@ -15,6 +22,10 @@ const PlacesListScreen = (props) => {
   useEffect(() => {
     dispatch(placesActions.loadPlaces());
   }, [dispatch]);
+
+  const deletePlaceHandler = () => {
+    dispatch(placesActions.deletePlace());
+  };
 
   return (
     <View>
